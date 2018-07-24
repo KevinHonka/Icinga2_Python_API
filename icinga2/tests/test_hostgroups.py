@@ -2,14 +2,14 @@ from __future__ import absolute_import
 
 import pytest
 
-from icinga2 import Icinga2API
+from icinga2 import Api
 from .constants import constants
 
 
 class TestHostgroups():
     @pytest.mark.run(order=1)
     def test_add(self):
-        api = Icinga2API(username=constants.username, password=constants.password, url=constants.url, debug=True)
+        api = Api(username=constants.username, password=constants.password, url=constants.url, debug=True)
 
         result = api.hostgroups.add(constants.Test_Hostgroup)
 
@@ -17,7 +17,7 @@ class TestHostgroups():
 
     @pytest.mark.run(order=5)
     def test_delete(self):
-        api = Icinga2API(username=constants.username, password=constants.password, url=constants.url, debug=True)
+        api = Api(username=constants.username, password=constants.password, url=constants.url, debug=True)
 
         result = api.hostgroups.delete(constants.Test_Hostgroup['name'])
 
@@ -25,7 +25,7 @@ class TestHostgroups():
 
     @pytest.mark.run(order=2)
     def test_list(self):
-        api = Icinga2API(username=constants.username, password=constants.password, url=constants.url, debug=True)
+        api = Api(username=constants.username, password=constants.password, url=constants.url, debug=True)
 
         result = api.hostgroups.list()
 
@@ -33,7 +33,7 @@ class TestHostgroups():
 
     @pytest.mark.run(order=3)
     def test_exists(self):
-        api = Icinga2API(username=constants.username, password=constants.password, url=constants.url, debug=True)
+        api = Api(username=constants.username, password=constants.password, url=constants.url, debug=True)
 
         result = api.hostgroups.exists(constants.Test_Hostgroup['name'])
 
@@ -41,7 +41,7 @@ class TestHostgroups():
 
     @pytest.mark.run(order=4)
     def test_objects(self):
-        api = Icinga2API(username=constants.username, password=constants.password, url=constants.url, debug=True)
+        api = Api(username=constants.username, password=constants.password, url=constants.url, debug=True)
 
         result = api.hostgroups.objects()
 

@@ -21,7 +21,7 @@ class Hosts():
         if config:
             self.config = config
 
-        self.log = logging.getLogger('Icinga2API.host')
+        self.log = logging.getLogger('Api.host')
 
         self.filter = 'host'
 

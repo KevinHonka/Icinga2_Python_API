@@ -32,7 +32,7 @@ data = {
     }
 }
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.hostgroups.add(data)
 ```
 
@@ -50,7 +50,7 @@ from icinga2 import Icinga2API
 
 name = "GroupA"
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.hostgroups.delete(name)
 ```
 
@@ -67,7 +67,7 @@ from icinga2 import Icinga2API
 
 name = "GroupA"
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.users.list()
 ```
 Returns a list of all hostnames
@@ -88,7 +88,7 @@ from icinga2 import Icinga2API
 
 name = "GroupA"
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.users.exists(name)
 ```
 Returns true or false depending on the users existence
@@ -109,7 +109,7 @@ _filter = ['name == GroupA']
 joins = ['']
 
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.users.objects(attrs=attrs, _filter=_filter, joins=joins)
 ```
 Returns a list of all object, with their attributes, matching the _\_filter_, with addition of the field defined in _joins_

@@ -15,7 +15,7 @@ class Hostgroups():
         if config:
             self.config = config
 
-        self.log = logging.getLogger('Icinga2API.hostgroups')
+        self.log = logging.getLogger('Api.hostgroups')
 
         self.filter = 'hostgroups'
 

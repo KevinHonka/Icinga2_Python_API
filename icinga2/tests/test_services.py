@@ -2,7 +2,7 @@ from __future__ import absolute_import
 
 import pytest
 
-from icinga2 import Icinga2API
+from icinga2 import Api
 from .constants import constants
 
 
@@ -11,7 +11,7 @@ def test_service_add():
     """
     Testing the addition of a service
     """
-    api = Icinga2API(username=constants.username, password=constants.password, url=constants.url, debug=False)
+    api = Api(username=constants.username, password=constants.password, url=constants.url, debug=False)
 
     response = api.services.add(servicename=constants.TestService_name,
                                 hostname=constants.TestHost_data['attrs']['name'], data=constants.TestService_data)
@@ -24,7 +24,7 @@ def test_service_exists():
     """
     Testing if the service was added correctly
     """
-    api = Icinga2API(username=constants.username, password=constants.password, url=constants.url, debug=False)
+    api = Api(username=constants.username, password=constants.password, url=constants.url, debug=False)
 
     response = api.services.exists(constants.TestService_name)
 
@@ -36,7 +36,7 @@ def test_service_list():
     """
     Listing all services, and check if created service is present
     """
-    api = Icinga2API(username=constants.username, password=constants.password, url=constants.url, debug=False)
+    api = Api(username=constants.username, password=constants.password, url=constants.url, debug=False)
 
     response = api.services.list(hostname=constants.TestHost_data['attrs']['name'])
 
@@ -48,7 +48,7 @@ def test_service_objects():
     """
     Get all service Objects and check if created service is present
     """
-    api = Icinga2API(username=constants.username, password=constants.password, url=constants.url, debug=False)
+    api = Api(username=constants.username, password=constants.password, url=constants.url, debug=False)
 
     response = api.services.objects()
 
@@ -60,7 +60,7 @@ def test_service_delete():
     """
     Delete the created service
     """
-    api = Icinga2API(username=constants.username, password=constants.password, url=constants.url, debug=False)
+    api = Api(username=constants.username, password=constants.password, url=constants.url, debug=False)
 
     response = api.services.delete(servicename=constants.TestService_name,
                                    hostname=constants.TestHost_data['attrs']['name'])

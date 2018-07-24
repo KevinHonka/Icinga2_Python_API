@@ -15,7 +15,7 @@ class Usergroups():
         if config:
             self.config = config
 
-        self.log = logging.getLogger('Icinga2API.usergroups')
+        self.log = logging.getLogger('Api.usergroups')
 
         self.filter = 'usergroups'
 

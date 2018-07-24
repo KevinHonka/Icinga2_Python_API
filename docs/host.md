@@ -33,7 +33,7 @@ data = {
     }
 }
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.hosts.add(data)
 ```
 
@@ -51,7 +51,7 @@ from icinga2 import Icinga2API
 
 name = "test.localdomain"
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.hosts.delete(name)
 ```
 
@@ -68,7 +68,7 @@ from icinga2 import Icinga2API
 
 name = "test.localdomain"
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.hosts.list()
 ```
 Returns a list of all hostnames
@@ -89,7 +89,7 @@ from icinga2 import Icinga2API
 
 name = "test.localdomain"
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.hosts.exists(name)
 ```
 Returns true or false depending on the hosts existence
@@ -110,7 +110,7 @@ _filter = ['host.name == test.localdomain', 'service.name == ping4']
 joins = ['service.name']
 
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.hosts.objects(attrs=attrs, _filter=_filter, joins=joins)
 ```
 Returns a list of all object, with their attributes, matching the _\_filter_, with addition of the field defined in _joins_
@@ -124,7 +124,7 @@ Example:
 ```python
 from icinga2 import Icinga2API
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.hosts.problem_count()
 ```
 Returns the count of all Hosts, that have a problem and are neither acknowledged nor in a downtime.
@@ -138,7 +138,7 @@ Example:
 ```python
 from icinga2 import Icinga2API
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.hosts.problem_list()
 ```
 Returns a dictionary where the hostnames are keys and contain their severity as a value

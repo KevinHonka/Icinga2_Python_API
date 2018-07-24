@@ -38,7 +38,7 @@ data = {
     }
 }
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.services.add(servicename=servicename, hostname=hostname, data)
 ```
 
@@ -58,7 +58,7 @@ hostname = "test.localdomain"
 
 servicename = "pingv4"
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.services.delete(hostname, servicename)
 ```
 
@@ -76,7 +76,7 @@ from icinga2 import Icinga2API
 hostname = "test.localdomain"
 servicename = "pingv4"
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.services.list()
 ```
 Returns a list of all services
@@ -104,7 +104,7 @@ name = "test.localdomain"
 
 servicename = "pingv4"
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.services.exists(servicename=servicename)
 ```
 Returns true or false depending on the service existing
@@ -130,7 +130,7 @@ _filter = ['host.name == test.localdomain', 'service.name == ping4']
 joins = ['host.name']
 
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.services.objects(attrs=attrs, _filter=_filter, joins=joins)
 ```
 Returns a list of all object, with their attributes, matching the _\_filter_, with addition of the field defined in _joins_
@@ -144,7 +144,7 @@ Example:
 ```python
 from icinga2 import Icinga2API
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.services.unhandled_list()
 ```
 Returns a list of all unhandled service problems
@@ -158,7 +158,7 @@ Example:
 ```python
 from icinga2 import Icinga2API
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.services.problem_count()
 ```
 Returns the count of all services, that have a problem and are neither acknowledged nor in a downtime.
@@ -172,7 +172,7 @@ Example:
 ```python
 from icinga2 import Icinga2API
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.services.problem_count()
 ```
 Returns the count of all services, that have a problem and are either acknowledged nor in a downtime.
@@ -186,7 +186,7 @@ Example:
 ```python
 from icinga2 import Icinga2API
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.services.warning_count()
 ```
 Returns the count of all services, that are in status warning
@@ -200,7 +200,7 @@ Example:
 ```python
 from icinga2 import Icinga2API
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.services.warning_handled_count()
 ```
 Returns the count of all services, that are in state warning and either acknowledged or in a downtime
@@ -214,7 +214,7 @@ Example:
 ```python
 from icinga2 import Icinga2API
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.services.critical_count()
 ```
 Returns the count of all services, that are in status critical
@@ -228,7 +228,7 @@ Example:
 ```python
 from icinga2 import Icinga2API
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.services.critical_handled_count()
 ```
 Returns the count of all services, that are in state critical and either acknowledged or in a downtime
@@ -242,7 +242,7 @@ Example:
 ```python
 from icinga2 import Icinga2API
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.services.unknown_count()
 ```
 Returns the count of all services, that are in state unknown
@@ -256,7 +256,7 @@ Example:
 ```python
 from icinga2 import Icinga2API
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.services.unknown_handled_count()
 ```
 Returns the count of all services, that are in state unknown and either acknowledged or in a downtime

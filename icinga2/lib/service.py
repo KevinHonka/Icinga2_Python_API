@@ -24,7 +24,7 @@ class Service():
         if config:
             self.config = config
 
-        self.log = logging.getLogger('Icinga2API.service')
+        self.log = logging.getLogger('Api.service')
 
         self.filter = 'service'
 

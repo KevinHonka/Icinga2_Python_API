@@ -15,7 +15,7 @@ class Users():
         if config:
             self.config = config
 
-        self.log = logging.getLogger('Icinga2API.user')
+        self.log = logging.getLogger('Api.user')
 
         self.filter = 'users'
 

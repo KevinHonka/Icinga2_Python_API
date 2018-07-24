@@ -26,7 +26,7 @@ class Icinga2APIClient(object):
         Initialize all needed Variables
         """
 
-        self.log = logging.getLogger('Icinga2API.client')
+        self.log = logging.getLogger('Api.client')
         self.connection = Session()
         self.connection.headers.update({'Accept': 'application/json'})
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -84,7 +84,7 @@ class Icinga2APIClient(object):
         """
         POST method
         :param uri: uri to attach to url
-        :param data: Data Dictionary that is used to query the Icinga2API
+        :param data: Data Dictionary that is used to query the Api
         """
         try:
             ret = self.connection.post(self.baseurl + uri, headers={'X-HTTP-Method-Override': 'GET'},

@@ -6,7 +6,7 @@ import sys
 from icinga2.lib import client, downtime, host, hostgroups, notifications, service, servicegroups, usergroups, users
 
 
-class Icinga2API(object):
+class Api(object):
     """
     Main Class to implement the Icinga2 API
     """
@@ -15,7 +15,7 @@ class Icinga2API(object):
         """
         Initialize all needed Classes
         """
-        self.log = logging.getLogger('Icinga2API')
+        self.log = logging.getLogger('Api')
         streamhandler = logging.StreamHandler(sys.stdout)
         formatter = logging.Formatter(logging.BASIC_FORMAT)
         streamhandler.setFormatter(formatter)

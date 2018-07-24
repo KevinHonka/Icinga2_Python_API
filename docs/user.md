@@ -29,7 +29,7 @@ data = {
     }
 }
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.users.add(data)
 ```
 
@@ -47,7 +47,7 @@ from icinga2 import Icinga2API
 
 name = "Max Mustermann"
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.users.delete(name)
 ```
 
@@ -64,7 +64,7 @@ from icinga2 import Icinga2API
 
 name = "Max Mustermann"
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.users.list()
 ```
 Returns a list of all hostnames
@@ -85,7 +85,7 @@ from icinga2 import Icinga2API
 
 name = "Max Mustermann"
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.users.exists(name)
 ```
 Returns true or false depending on the users existence
@@ -106,7 +106,7 @@ _filter = ['__name == Max Mustermann']
 joins = ['']
 
 
-api = Icinga2API(username="root", password="icinga2", url="https://localhost:5665")
+api = Api(username="root", password="icinga2", url="https://localhost:5665")
 api.users.objects(attrs=attrs, _filter=_filter, joins=joins)
 ```
 Returns a list of all object, with their attributes, matching the _\_filter_, with addition of the field defined in _joins_

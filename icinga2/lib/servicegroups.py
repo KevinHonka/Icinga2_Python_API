@@ -15,7 +15,7 @@ class Servicegroups():
         if config:
             self.config = config
 
-        self.log = logging.getLogger('Icinga2API.servicegroups')
+        self.log = logging.getLogger('Api.servicegroups')
 
         self.filter = 'servicegroups'
 

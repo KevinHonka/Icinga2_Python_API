@@ -4,7 +4,7 @@ import copy
 
 import pytest
 
-from icinga2 import Icinga2API
+from icinga2 import Api
 from .constants import constants
 
 
@@ -13,7 +13,7 @@ def test_host_add():
     """
     Testing the addition of a host
     """
-    api = Icinga2API(username=constants.username, password=constants.password, url=constants.url, debug=False)
+    api = Api(username=constants.username, password=constants.password, url=constants.url, debug=False)
 
     data = copy.deepcopy(constants.TestHost_data)
 
@@ -27,7 +27,7 @@ def test_host_exists():
     """
     Testing if the host was added correctly
     """
-    api = Icinga2API(username=constants.username, password=constants.password, url=constants.url, debug=False)
+    api = Api(username=constants.username, password=constants.password, url=constants.url, debug=False)
 
     response = api.hosts.exists(constants.TestHost_data['attrs']['name'])
 
@@ -39,7 +39,7 @@ def test_host_list():
     """
     Listing all Hosts, and check if created host is present
     """
-    api = Icinga2API(username=constants.username, password=constants.password, url=constants.url, debug=False)
+    api = Api(username=constants.username, password=constants.password, url=constants.url, debug=False)
 
     response = api.hosts.list()
 
@@ -51,7 +51,7 @@ def test_host_objects():
     """
     Get all Host Objects and check if created host is present
     """
-    api = Icinga2API(username=constants.username, password=constants.password, url=constants.url, debug=False)
+    api = Api(username=constants.username, password=constants.password, url=constants.url, debug=False)
 
     response = api.hosts.objects()
 
@@ -63,7 +63,7 @@ def test_host_delete():
     """
     Delete the created Host
     """
-    api = Icinga2API(username=constants.username, password=constants.password, url=constants.url, debug=False)
+    api = Api(username=constants.username, password=constants.password, url=constants.url, debug=False)
 
     response = api.hosts.delete(constants.TestHost_data['attrs']['name'])
 
