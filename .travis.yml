@@ -1,0 +1,30 @@
+language: python
+
+sudo: required
+
+services:
+  - docker
+
+addons:
+  sonarcloud:
+    organization: "kevinhonka-github"
+    token:
+      secure: 70f20a06deef306b58d39cfddcb2d700414e6ea6
+
+before_install:
+  - docker pull bodsch/docker-icinga2
+  - docker run --rm --detach --publish=5665:5665 --env ICINGA_MASTER=icinga2 --env ICINGA_CLUSTER=true --env ICINGA_API_USERS=root:icinga --env DEMO_DATA=true --hostname=icinga2 bodsch/docker-icinga2
+  - docker ps -a
+  - sleep 20s
+
+install:
+  - pip install -r requirements.txt
+  - pip install pytest-cov
+  - pip install pytest-ordering
+
+script:
+  - ls -la
+  - python setup.py pytest
+  - sonar-scanner
+
+fast_finish: true
