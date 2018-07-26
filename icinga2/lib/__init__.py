@@ -1,6 +1,2 @@
-
-__all__ = []
-
-import automodinit
-automodinit.automodinit(__name__, __file__, globals())
-del automodinit
+__all__ = ['client', 'downtime', 'host', 'hostgroups', 'notifications', 'service', 'servicegroups', 'usergroups',
+           'users']

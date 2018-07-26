@@ -1,5 +1,5 @@
 import os
-from setuptools import setup
+from setuptools import setup, find_packages
 
 
 # Utility function to read the README file.
@@ -12,7 +12,7 @@ def read(fname):
 
 setup(
     name='icinga2',
-    packages=['icinga2'],  # this must be the same as the name above
+    packages=find_packages(),  # this must be the same as the name above
     package_data={'icinga2': ['*/*', '*']},
     include_package_data=True,
     version='0.4',

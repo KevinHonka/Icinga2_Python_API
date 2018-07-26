@@ -6,7 +6,7 @@ import sys
 from icinga2.lib import client, downtime, host, hostgroups, notifications, service, servicegroups, usergroups, users
 
 
-class Api(object):
+class api(object):
     """
     Main Class to implement the Icinga2 API
     """
