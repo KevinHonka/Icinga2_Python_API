@@ -22,6 +22,6 @@ setup(
     url='https://github.com/KevinHonka/Icinga2_Python_API',  # use the URL to the github repo
     keywords=['Icinga2', 'API'],  # arbitrary keywords
     classifiers=[],
-    setup_requires=['pytest-runner', 'automodinit'],
+    setup_requires=['pytest-runner'],
     tests_require=['pytest']
 )
